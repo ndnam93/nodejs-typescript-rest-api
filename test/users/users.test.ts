@@ -82,8 +82,8 @@ describe('users and auth endpoints', function () {
                 .send({
                     email: firstUserBody.email,
                     password: firstUserBody.password,
-                    firstName: 'Marcos',
-                    lastName: 'Silva',
+                    firstName: 'Nam',
+                    lastName: 'Nguyen',
                     permissionFlags: 256,
                 });
             expect(res.status).to.equal(404);
@@ -96,8 +96,8 @@ describe('users and auth endpoints', function () {
                 .send({
                     email: firstUserBody.email,
                     password: firstUserBody.password,
-                    firstName: 'Marcos',
-                    lastName: 'Silva',
+                    firstName: 'Nam',
+                    lastName: 'Nguyen',
                     permissionFlags: 256,
                 });
             expect(res.status).to.equal(403);
@@ -140,7 +140,7 @@ describe('users and auth endpoints', function () {
                         password: firstUserBody.password,
                         firstName: newFirstName2,
                         lastName: newLastName2,
-                        permissionFlags: 2,
+                        permissionFlags: 1,
                     });
                 expect(res.status).to.equal(204);
             });

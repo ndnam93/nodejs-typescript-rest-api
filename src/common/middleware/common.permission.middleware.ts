@@ -35,7 +35,7 @@ class CommonPermissionMiddleware {
     }
 
     userCantChangePermission(req: Request, res: Response, next: NextFunction) {
-        if (req.body?.permissionFlags != res.locals.user.permissionFlags) {
+        if ('permissionFlags' in req.body && req.body.permissionFlags != res.locals.user.permissionFlags) {
             res.status(403).send({ errors: ['User cannot change permission flags'] });
         } else {
             next();
